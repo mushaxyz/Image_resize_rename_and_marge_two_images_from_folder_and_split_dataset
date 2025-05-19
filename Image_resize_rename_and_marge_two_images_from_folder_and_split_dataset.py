@@ -9,45 +9,45 @@ Created on Mon Apr 11 03:23:00 2022
 
 ################## Resize images form folder ##################
 
-# from PIL import Image
-# import os 
-# # from datetime import datetime
+from PIL import Image
+import os 
+# from datetime import datetime
 
-# for image_file_name in os.listdir('WCEBleedGen_split82_seed42/train/Annotations'):
+for image_file_name in os.listdir('WCEBleedGen_split82_seed42/train/Annotations'):
     
-#     if image_file_name.endswith(".png"):
-#         # now = datetime.now().strftime('%Y%m%d-%H%M%S-%f')
+    if image_file_name.endswith(".png"):
+        # now = datetime.now().strftime('%Y%m%d-%H%M%S-%f')
 
-#         im = Image.open('WCEBleedGen_split82_seed42/train/Annotations/'+image_file_name)
-#         new_width  = 256
-#         new_height = 256
-#         im = im.resize((new_width, new_height), Image.Resampling.LANCZOS)
-#         image_file_name = image_file_name.replace("ann", "img")
-#         im.save('WCEBleedGen_split82_seed42/train/rename/Annotations/' + image_file_name)
-#         # im.save('F:\\GANs THESIS\\datasets\\IMAGE RESIZE AND MARGE\\new dataset\\' + now + '.jpg')
+        im = Image.open('WCEBleedGen_split82_seed42/train/Annotations/'+image_file_name)
+        new_width  = 256
+        new_height = 256
+        im = im.resize((new_width, new_height), Image.Resampling.LANCZOS)
+        image_file_name = image_file_name.replace("ann", "img")
+        im.save('WCEBleedGen_split82_seed42/train/rename/Annotations/' + image_file_name)
+        # im.save('F:\\GANs THESIS\\datasets\\IMAGE RESIZE AND MARGE\\new dataset\\' + now + '.jpg')
         
         
         
 ################## Split dataset for train validation and test ##################
 
-# import splitfolders
-# data_root = '/Resize'
-# splitfolders.ratio(data_root, output="WCEBleedGen_split82_seed42", 
-#                     seed=42, ratio=(.8, .2), 
-#                     group_prefix=None) # default values
+import splitfolders
+data_root = '/Resize'
+splitfolders.ratio(data_root, output="WCEBleedGen_split82_seed42", 
+                    seed=42, ratio=(.8, .2), 
+                    group_prefix=None) # default values
   
         
    
 ################## Rename images name form folder  ##################   
-# for image_file_name in os.listdir('WCEBleedGen_split82_seed42/train/Annotations'):
+for image_file_name in os.listdir('WCEBleedGen_split82_seed42/train/Annotations'):
    
-#     if image_file_name.endswith(".png"):
-#         # now = datetime.now().strftime('%Y%m%d-%H%M%S-%f')
+    if image_file_name.endswith(".png"):
+        # now = datetime.now().strftime('%Y%m%d-%H%M%S-%f')
 
-#         im = Image.open('WCEBleedGen (updated)/Annotations/'+image_file_name)
-#         image_file_name = image_file_name.replace("ann", "img")
-#         im.save('WCEBleedGen_split82_seed42/train/rename/Annotations/' + image_file_name)
-#         # im.save('WCEBleedGen_split82_seed42/train/rename/Annotations/' + now + '.jpg') 
+        im = Image.open('WCEBleedGen (updated)/Annotations/'+image_file_name)
+        image_file_name = image_file_name.replace("ann", "img")
+        im.save('WCEBleedGen_split82_seed42/train/rename/Annotations/' + image_file_name)
+        # im.save('WCEBleedGen_split82_seed42/train/rename/Annotations/' + now + '.jpg') 
  
    
     
